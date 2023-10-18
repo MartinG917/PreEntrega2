@@ -61,7 +61,7 @@ SneakerCollection.forEach((zapatilla) => {
   zapatillaContainer.append(zapatillaElement);
 });
 
-*/
+
 
 function suma(num1, num2) {
   return num1 + num2;
@@ -126,8 +126,49 @@ switch (opcion) {
     resultado = "Opción no válida. Por favor, seleccione una opción válida.";
 }
 
-alert("El resultado es " + resultado);
+alert("El resultado es " + resultado);*/
 
+
+
+
+function Persona(nombre,apellido,edad){
+  this.nombre=nombre;
+  this.apellido=apellido;
+  this.edad=edad;
+}
+
+const personas=[];
+
+let continuar=true;
+
+while(continuar){
+  const nombre=prompt("Ingrese su nombre")
+  const apellido=prompt("Ingrese su apellido")
+  const edad=prompt("Ingrese su edad")
+  
+  const nuevaPersona=new Persona(nombre,apellido,edad);
+  
+  personas.push(nuevaPersona);
+
+
+const respuesta = prompt("¿Desea ingresar otra persona? (Sí/No)").toLowerCase();
+
+  if (respuesta !== "si") {
+      continuar = false;
+  }
+}
+
+personasenJSON=JSON.stringify(personas)
+
+
+localStorage.setItem('Personas',personasenJSON);
+localStorage.getItem('Personas')
+
+const nombres=personas.map(personas=>personas.nombre)
+console.log("Los nombres que han sido ingresados son " + nombres)
+
+console.log(personasenJSON);
+console.log(typeof personasenJSON)
 
 
 
